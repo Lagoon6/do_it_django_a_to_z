@@ -11,3 +11,7 @@ class Post(models.Model):
 
     def __str__(self):
         return f'[{self.pk}]{self.title}'   #pk: 각 레코드에 대한 고유의 값./ title: 제목
+
+
+    def get_absolute_url(self):
+        return f'/blog/{self.pk}/'
