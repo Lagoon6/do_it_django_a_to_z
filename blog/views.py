@@ -1,12 +1,16 @@
-from django.shortcuts import render
+#from django.shortcuts import render
 from .models import Post
-from django.views.generic import ListView #CBV
+from django.views.generic import ListView, DetailView #CBV
 
 
 # CBV로 만들기
 class PostList(ListView):
     model = Post
     ordering = '-pk'
+
+class PostDetail(DetailView):
+    model = Post
+'''
 
 def index(request):
     posts = Post.objects.all().order_by('-pk')
@@ -18,8 +22,9 @@ def index(request):
             'posts':posts,
         }
     )
+'''
 
-
+'''
 def single_post_page(request, pk):
     post = Post.objects.get(pk=pk)
 
@@ -30,3 +35,4 @@ def single_post_page(request, pk):
             'post': post,
         }
     )
+'''
