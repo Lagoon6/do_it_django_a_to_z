@@ -18,8 +18,9 @@ Including another URLconf
 사용자가 어떤 url형식으로 접근했을 때 어떻게 웹사이트를 작동시킬지를 정리해 놓은 파일
 '''
 from django.contrib import admin
-from django.urls import path
+from django.urls import path, include
 
 urlpatterns = [
+    path('blog/', include('blog.urls')),
     path('admin/', admin.site.urls),
 ]
