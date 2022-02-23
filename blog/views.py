@@ -1,6 +1,12 @@
 from django.shortcuts import render
 from .models import Post
-# Create your views here.
+from django.views.generic import ListView #CBV
+
+
+# CBV로 만들기
+class PostList(ListView):
+    model = Post
+    ordering = '-pk'
 
 def index(request):
     posts = Post.objects.all().order_by('-pk')
