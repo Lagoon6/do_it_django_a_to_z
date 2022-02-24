@@ -7,6 +7,7 @@ class Post(models.Model):
 
     created_at = models.DateTimeField(auto_now_add=True) # 자동으로 입력 시간
     updated_at = models.DateTimeField(auto_now = True)
+    head_image = models.ImageField(upload_to = 'blog/images/%Y/%m/%d/', blank=True)
 
 
     def __str__(self):

@@ -12,7 +12,7 @@ https://docs.djangoproject.com/en/4.0/ref/settings/
 '''
 이 장고 프로젝트의 설정을 담고 있는 파일
 '''
-
+import os
 from pathlib import Path
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
@@ -122,6 +122,8 @@ USE_TZ = False
 
 STATIC_URL = 'static/'
 
+MEDIA_URL = '/media/'
+MEDIA_ROOT = os.path.join(BASE_DIR, '_media')
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.0/ref/settings/#default-auto-field
 
